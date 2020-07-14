@@ -7,13 +7,19 @@
       right
     >
       <v-list dense>
-        <v-list-item @click.stop="right = !right">
+         <v-list-item>
           <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
+            <v-icon>
+             brightness_6
+            </v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
+            <v-list-item-title>Dark Theme</v-list-item-title>
           </v-list-item-content>
+           <v-switch 
+            v-model="$vuetify.theme.dark"
+           >
+            </v-switch>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -25,7 +31,7 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+      <v-toolbar-title>Admon's Dashboard</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click.stop="drawerRight = !drawerRight"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -35,12 +41,14 @@
       app
     >
       <v-list dense>
-        <v-list-item @click.stop="left = !left">
+        <v-list-item v-on:click="clicked">
           <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
+            <v-icon>
+             account_circle
+            </v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
+            <v-list-item-title>My Profile</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -53,29 +61,10 @@
     ></v-navigation-drawer>
 
     <v-main>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          justify="center"
-          align="center"
-        >
+      <v-container class="fill-height" fluid>
+        <v-row justify="center" align="center">
           <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
+            
           </v-col>
         </v-row>
       </v-container>
@@ -102,14 +91,17 @@
 
 <script>
  export default {
-    props: {
-      source: String,
-    },
     data: () => ({
       drawer: null,
       drawerRight: null,
       right: false,
-      left: false,
+      left: false
     }),
+    methods:{
+      clicked(){
+        alert("clicked");
+      },
+    },
+
   }
 </script>
