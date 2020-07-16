@@ -1,30 +1,28 @@
 <template>
    <v-app id="main" :style="{background: $vuetify.theme.themes[theme].background}">
-
   <!-- Base Navigation-->
-    <Base/>
+  <keep-alive>
+      <Base/>
+  </keep-alive>
 
 <!-- body -->
-    <v-main>
-      <v-container class="fill-height" fluid>
-        <v-row justify="center" align="center">
-          <v-col class="shrink">         
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
+    <!-- <v-main>
+      <card1/>      
+    </v-main> -->
 
 <!-- Footer -->
+  <keep-alive>
     <Footer/>
-
+  </keep-alive>
   </v-app>
 </template>
 
 <script>
  export default {
    components:{
-     'Base': () => import('./base/Base'),
-     'Footer':() => import('./base/Footer'),
+     'Base': () => import('./base/Base'/* webpackChunkName: "js/chunk-Navigation" */),
+     'Footer':() => import('./base/Footer' /* webpackChunkName: "js/chunk-footer" */),
+    //  'card1':() => import('./main/card1'),
    },
    computed:{
     theme(){

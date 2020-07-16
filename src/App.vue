@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <Root/>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -11,7 +11,6 @@ import Root from './components/Root';
 
 export default {
   name: 'App',
-
   components: {
     Root,
   },
