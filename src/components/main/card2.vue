@@ -7,24 +7,12 @@
         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
         height="200px"
       >
-        <v-card-title>Card2</v-card-title>
+        <v-card-title>Redeem Reward</v-card-title>
       </v-img>
 
-      <v-card-actions>
-        <v-spacer></v-spacer>
-
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-bookmark</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-share-variant</v-icon>
-        </v-btn>
-      </v-card-actions>
+      <!-- <v-card-actions>
+        
+      </v-card-actions> -->
     </v-card>
 </div>
 </template>
@@ -32,7 +20,7 @@
 <script>
 export default {
 data: () => ({
-    src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+    src: 'https://static.gosugamers.net/1b/ae/b8/b74946fcd7b15ad71349606fb8c6d32215ed6b5e9409887da24888b7e4.jpg',
   }),
 
 }

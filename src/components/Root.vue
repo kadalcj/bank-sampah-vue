@@ -22,7 +22,6 @@
    components:{
      'Base': () => import('./base/Base'/* webpackChunkName: "js/chunk-Navigation" */),
      'Footer':() => import('./base/Footer' /* webpackChunkName: "js/chunk-footer" */),
-    //  'card1':() => import('./main/card1'),
    },
    computed:{
     theme(){
