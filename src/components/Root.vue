@@ -27,6 +27,22 @@
     theme(){
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
     }
+  },
+
+  methods:{
+    async getLoginSessions(){
+      console.log("checkpoint Checked");
+      var getUserId = localStorage.getItem("userid");
+      if(getUserId > 0){
+         await this.$router.replace({path: "/dashboard"});
+      }else{
+         await this.$router.replace({path: "/login"});
+      }
+    },
+
+  },
+  mounted(){
+    this.getLoginSessions();
   }
 
   }
