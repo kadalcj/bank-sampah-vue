@@ -67,7 +67,6 @@
  export default {
       components:{
      'card1':() => import('../main/baseCard'),
-    //  'card2':() => import('../main/card2'),
    },
 
     data: () => ({
@@ -79,8 +78,14 @@
         alert("clicked");
       },
       logout(){
-        localStorage.removeItem('userid');
-        this.$router.replace({path: "/login"});
+        try{
+          localStorage.removeItem('userid');
+          localStorage.removeItem('token');
+          this.$router.replace({path: "/login"});
+        }catch(err){
+          console.log(err);
+          alert("Gagal Logout, Silahkan coba kembali");          
+        }
       },
     },
 
