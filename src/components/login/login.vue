@@ -17,7 +17,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="primary" @click="getAuth">Sign-Up</v-btn>
+                <v-btn text color="primary" @click="signup">Sign-Up</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn color="primary" type="submit" @click="login">Login</v-btn>
               </v-card-actions>
@@ -25,7 +25,7 @@
           </v-col>
         </v-row>
 
-        <v-container class="justify-center">
+        <!-- <v-container class="justify-center">
           <v-dialog width="800" v-model="dialog">
             <v-card width="800">
             <v-card-title>
@@ -53,7 +53,7 @@
             </v-card-text>
           </v-card>
           </v-dialog>
-        </v-container>
+        </v-container> -->
       </v-container>
     </v-main>
   </v-app>
@@ -73,8 +73,8 @@
       r_firstName: null,
       r_lastName: null,
       r_contact: null,
-      whoissul:null,
-      dialog:false,
+      // whoissul:null,
+      // dialog:false,
       info:null,
     }),
     methods:{
@@ -107,52 +107,23 @@
       },
       
        signup(){
-        if(this.$refs.register_form.validate()){
-            try{
-              const res = axios.post('https://bank-sampah-api.herokuapp.com/api/register',
-              {
-                  "email" : this.r_email,
-                  "password": this.r_password,
-                  "firstName": this.r_firstName,
-                  "lastName": this.r_lastName,
-                  "contact": this.r_contact ,
-              },{
-                headers: {
-                  'Accept' : 'application/json',
-                  'Content-Type': 'application/json',
-                }
-              }).then(response => (this.info = response.data))
-              console.log(res);
-              // const mess = JSON.stringify(res.data.message);
-              // if(!mess){
-              //   const data = res.data;
-              //   if(data){
-              //     alert("Account Berhasil Ditambahkan, Silahkan Login");
-              //   }else{
-              //     alert("Gagal Menambahkan Account ,Silahkan Coba Beberapa Saat Lagi");
-              //   }                
-              // }else{
-              //   alert("Gagal Menambahkan Account ,Email sudah didaftarkan");
-              // }
-            }catch(err){
-              console.log(err);
-            }
+         this.$router.replace({path: "/register"});
         }
       },
 
-      getAuth(){
-        this.dialog = true;
-      },
-      validation(){
-        if(this.whoissul == "kadalcj"){
-          alert("Muehehe, admin | admin");
-        }else{
-          alert("Mmmmh..., Try again");
-        }
-        this.whoissul = null;
-        this.dialog = false;               
-      }
-    },
+    //   getAuth(){
+    //     this.dialog = true;
+    //   },
+    //   validation(){
+    //     if(this.whoissul == "kadalcj"){
+    //       alert("Muehehe, admin | admin");
+    //     }else{
+    //       alert("Mmmmh..., Try again");
+    //     }
+    //     this.whoissul = null;
+    //     this.dialog = false;               
+    //   }
+    // },
 
   }
 </script>

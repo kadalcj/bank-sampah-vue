@@ -22,9 +22,11 @@ class User{
         })
     }
 
-    storeSession(data){
-        const user = JSON.stringify(data.user);
-        const token = data.token;
+    storeSession(res){
+        // const user = JSON.stringify(data.user);
+        // const token = data.token;
+        const user = JSON.stringify(res.data.data);
+        const token = res.data.token;
         AppStorage.store(user, token);
     }
     
@@ -60,4 +62,4 @@ class User{
 
 }
 
-export default new User();
+export default User;
