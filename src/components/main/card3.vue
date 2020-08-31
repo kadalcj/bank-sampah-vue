@@ -10,9 +10,7 @@
         <v-card-title>Card3</v-card-title>
       </v-img>
 
-      <!-- <v-card-actions>
-      
-      </v-card-actions> -->
+
     </v-card>
 </div>
 </template>

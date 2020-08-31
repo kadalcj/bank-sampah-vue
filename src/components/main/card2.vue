@@ -10,9 +10,6 @@
         <v-card-title>Redeem Reward</v-card-title>
       </v-img>
 
-      <!-- <v-card-actions>
-        
-      </v-card-actions> -->
     </v-card>
 </div>
 </template>
