@@ -2,9 +2,9 @@
 <div>
    <v-app>
       <v-main>
-      <v-container class="fill-height">
-        <v-row align="center" justify="center">
-          <v-col cols="12" xs="4" sm="8" md="8">
+      <v-container  class="fill-height">
+        <v-row >
+          <v-col justify="center" align="center">
             <v-card class="elevation-12" width="800">
               <v-toolbar color="primary" dark flat>
                 <v-toolbar-title>Register</v-toolbar-title>
