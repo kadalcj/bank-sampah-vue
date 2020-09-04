@@ -1,19 +1,11 @@
 <template>
   <v-app>
-      <v-container >
-        <v-row dense>
+      <v-container fluid>
+        <v-row justify="center">
             <!-- card1 -->
-          <v-col :cols="12" >
-            <card1/>
+          <v-col lg="10">
+            <Reward/>
           </v-col>
-
-        <v-col :cols="6" >
-            <card2/>           
-        </v-col>
-
-        <v-col :cols="6">
-            <card3/>           
-        </v-col>
 
         </v-row>
       </v-container>
@@ -23,9 +15,9 @@
 <script>
 export default {
     components:{
-     'card1':() => import('./card1'),
-     'card2':() => import('./card2'),
-     'card3':() => import('./card3'),
+     'Reward':() => import('./Reward/Reward'),
+    //  'card2':() => import('./card2'),
+    //  'card3':() => import('./card3'),
    },
 data: () => ({
 
